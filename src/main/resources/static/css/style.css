@@ -1,0 +1,30 @@
+.product:hover {
+  transition: 0.5s;
+  transform: scale(1.02);
+}
+
+.product-link {
+  color: #000 !important;
+  text-decoration: none;
+}
+
+p {
+  margin-bottom: 0 !important;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+h1 {
+  color: white;
+}
+
+img {
+  width: 32px;
+  height: 32px;
+}
+
+td {
+  border-width: 0 !important;
+}
