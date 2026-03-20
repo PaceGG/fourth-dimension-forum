@@ -1,3 +1,45 @@
+.auth-container {
+    max-width: 400px;
+    margin: 2rem auto;
+    color: var(--text);
+}
+
+.auth-container h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
+    gap: 1rem;
+}
+
+.auth-submit {
+    padding: 0.75rem;
+    background: var(--bg-header);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.2s;
+    margin-top: 0.5rem;
+}
+
+.auth-submit:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+@media (max-width: 768px) {
+    .auth-container {
+        margin: 1rem;
+        padding: 0 1rem;
+    }
+}
+
 .form-field {
     display: flex;
     flex-direction: column;
@@ -24,41 +66,4 @@
 
 .form-field input.error {
     border-color: var(--danger);
-}
-
-.actions {
-    display: flex;
-    gap: 0.5rem;
-    width: 80px;
-}
-
-.actions form {
-    margin: 0;
-}
-
-.actions button,
-.actions a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 32px;
-    height: 32px;
-    padding: 0;
-    background: var(--button-bg);
-    border: none;
-    border-radius: var(--radius);
-    cursor: pointer;
-    transition: opacity 0.2s;
-    text-decoration: none;
-}
-
-.actions button:hover,
-.actions a:hover {
-    opacity: 0.8;
-}
-
-.actions img {
-    width: 16px;
-    height: 16px;
-    filter: brightness(0) invert(1);
 }
