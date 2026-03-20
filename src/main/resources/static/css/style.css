@@ -1,4 +1,6 @@
 @import url('components/form.css');
+@import url('components/login-form.css');
+@import url('components/create-form.css');
 @import url('components/table.css');
 @import url('components/navbar.css');
 @import url('responsive.css');

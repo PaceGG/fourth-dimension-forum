@@ -1,25 +1,31 @@
 <#import "blocks/template.ftlh" as t>
 <@t.template user>
-    <div style="color: white !important;"><h1 style="text-align: center">Авторизация</h1>
-    <hr>
-    <form action="/login " method="post">
-        <div class="form-group">
-            <label for="email">Электронная почта</label>
-            <input type="email" class="text-light bg-dark form-control <#if RequestParameters.error??>is-invalid</#if>" id="email" name="username">
-            <div id="email" class="invalid-feedback">
-                Неверная электронная почта
+    <div class="login-container">
+        <h1>Авторизация</h1>
+        <hr>
+        
+        <form action="/login" method="post" class="login-form">
+            <div class="form-field">
+                <label for="email">Электронная почта</label>
+                <input type="email" id="email" name="username" class="<#if RequestParameters.error??>error</#if>">
+                <#if RequestParameters.error??>
+                    <div class="error-message">Неверная электронная почта</div>
+                </#if>
             </div>
-        </div>
-        <div class="form-group">
-            <label for="password">Пароль</label>
-            <input type="password" class="text-light bg-dark form-control <#if RequestParameters.error??>is-invalid</#if>" id="password" name="password">
-            <div id="password" class="invalid-feedback">
-                Неверный пароль
+            
+            <div class="form-field">
+                <label for="password">Пароль</label>
+                <input type="password" id="password" name="password" class="<#if RequestParameters.error??>error</#if>">
+                <#if RequestParameters.error??>
+                    <div class="error-message">Неверный пароль</div>
+                </#if>
             </div>
-        </div>
-        <input type="hidden" name="_csrf" value="${_csrf.token}">
-        <button type="submit" style="width: 100%" class="btn btn-dark">Войти</button>
-    </form>
-    <hr>
-    <h2>Нет аккаунта? <a href="/registration">Зарегистрируйся!</a></h2></div>
+            
+            <input type="hidden" name="_csrf" value="${_csrf.token}">
+            <button type="submit" class="login-submit">Войти</button>
+        </form>
+        
+        <hr>
+        <p class="register-link">Нет аккаунта? <a href="/registration">Зарегистрируйся!</a></p>
+    </div>
 </@t.template>
