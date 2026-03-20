@@ -1,0 +1,140 @@
+.create-post-btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: var(--primary);
+    color: var(--text);
+    text-decoration: none;
+    border-radius: var(--radius);
+    margin-bottom: 1.5rem;
+}
+
+.create-post-btn:hover {
+    background: var(--primary-hover);
+}
+
+.post-row {
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.post-row:hover {
+    background: rgba(255,255,255,0.05);
+}
+
+.post-id {
+    width: 60px;
+    font-weight: bold;
+}
+
+.post-content {
+    flex: 1;
+}
+
+.post-title {
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+}
+
+.post-preview {
+    color: var(--text-muted);
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-size: 0.875rem;
+}
+
+.post-rating {
+    white-space: nowrap;
+    width: 100px;
+}
+
+.post-author {
+    white-space: nowrap;
+}
+
+.post-author a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.post-author a:hover {
+    text-decoration: underline;
+}
+
+.post-actions {
+    display: flex;
+    gap: 0.5rem;
+    width: 80px;
+}
+
+.post-actions form {
+    margin: 0;
+}
+
+.post-actions button,
+.post-actions a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    background: var(--button-bg);
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+}
+
+.post-actions button:hover,
+.post-actions a:hover {
+    opacity: 0.8;
+}
+
+.post-actions img {
+    width: 16px;
+    height: 16px;
+    filter: brightness(0) invert(1);
+}
+
+.post-actions-empty {
+    width: 80px;
+}
+
+.empty-posts td {
+    text-align: center;
+    padding: 3rem;
+    color: var(--text-muted);
+}
+
+@media (max-width: 768px) {
+    .post-id {
+        width: 40px;
+        font-size: 0.875rem;
+    }
+    
+    .post-rating,
+    .post-author {
+        font-size: 0.875rem;
+    }
+    
+    .post-actions,
+    .post-actions-empty {
+        width: 60px;
+    }
+    
+    .post-actions button,
+    .post-actions a {
+        width: 28px;
+        height: 28px;
+    }
+    
+    .post-actions img {
+        width: 14px;
+        height: 14px;
+    }
+}
+
+@media (max-width: 640px) {
+    .post-id {
+        display: none;
+    }
+}

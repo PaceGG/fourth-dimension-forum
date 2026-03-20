@@ -1,22 +1,25 @@
 <#import "blocks/template.ftlh" as t>
 <@t.template user>
-    <div class="">
+    <div class="breadcrumb">
         <h1>${forum.title}</h1>
-        <a href="/">Главная</a>
-        <span class="text-white">➤</span>
-        <a href="/forum/${forum.id}">${forum.title}</a>
+        <div class="breadcrumb-links">
+            <a href="/">Главная</a>
+            <span>➤</span>
+            <a href="/forum/${forum.id}">${forum.title}</a>
+        </div>
     </div>
 
+    <a href="/create/${forum.id}" class="create-post-btn">Написать пост</a>
 
-    <a href="/create/${forum.id}" class="btn btn-primary my-3">Написать пост</a>
-
-
-    <table class="table table-striped">
+    <table class="forum-table">
         <#list posts as post>
-            <tr class="bg-dark text-white" style="vertical-align: middle; cursor: pointer;" onclick="location.href='/forum/${forum.id}/post/${post.id}'">
-                <td>${post.id}</td>
-                <td style=""><p>${post.title}</p><p style="color: gray; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden">${post.text}</p></td>
-                <td style="white-space: nowrap;">
+            <tr class="post-row" onclick="location.href='/forum/${forum.id}/post/${post.id}'">
+                <td class="post-id">${post.id}</td>
+                <td class="post-content">
+                    <p class="post-title">${post.title}</p>
+                    <p class="post-preview">${post.text}</p>
+                </td>
+                <td class="post-rating">
                     <#if post.ratings?has_content>
                         <#assign totalRating = 0>
                         <#list post.ratings as r>
@@ -27,24 +30,31 @@
                         Рейтинг: 0
                     </#if>
                 </td>
-                <td>Автор: <a href="/user/${post.author.id}" style="white-space: nowrap;">${post.author.name}</a></td>
+                <td class="post-author">
+                    Автор: <a href="/user/${post.author.id}">${post.author.name}</a>
+                </td>
                 <#if user.id??>
                     <#if user.id == post.author.id || user.isAdmin() == true || (user.isModerator() == true && post.author.isAdmin() == false)>
-                    <td class="d-flex">
-                        <form action="/delete/${post.id}" method="post">
-                            <input type="hidden" name="_csrf" value="${_csrf.token}">
-                            <button type="submit" class="btn btn-danger"><img src="/images/delete.svg" alt="delete"></button>
-                        </form>
-                        <a href="/moderator/edit-post/${post.id}" class="btn btn-primary"><img src="/images/edit.svg" alt="edit"></a>
-                    </td>
+                        <td class="actions">
+                            <form action="/delete/${post.id}" method="post">
+                                <input type="hidden" name="_csrf" value="${_csrf.token}">
+                                <button type="submit">
+                                    <img src="/images/delete.svg" alt="delete">
+                                </button>
+                            </form>
+                            <a href="/moderator/edit-post/${post.id}">
+                                <img src="/images/edit.svg" alt="edit">
+                            </a>
+                        </td>
                     <#else>
-                        <td></td>
+                        <td class="actions"></td>
                     </#if>
                 </#if>
             </tr>
         <#else>
-            <h1 style="text-align: center">Постов еще нет, напишите первым!</h1>
+            <tr class="empty-message">
+                <td colspan="5">Постов еще нет, напишите первым!</td>
+            </tr>
         </#list>
     </table>
 </@t.template>
-

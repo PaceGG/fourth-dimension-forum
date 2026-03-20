@@ -1,0 +1,22 @@
+.breadcrumb {
+    margin-bottom: 1.5rem;
+}
+
+.breadcrumb h1 {
+    margin-bottom: 0.5rem;
+}
+
+.breadcrumb-links {
+    display: flex;
+    gap: 0.5rem;
+    color: var(--text-muted);
+}
+
+.breadcrumb-links a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.breadcrumb-links a:hover {
+    text-decoration: underline;
+}
