@@ -1,0 +1,39 @@
+.forum-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--bg-card);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+}
+
+.forum-table th,
+.forum-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+}
+
+.forum-table th {
+    background: var(--bg-header);
+    font-weight: 600;
+}
+
+.forum-table tr:last-child td {
+    border-bottom: none;
+}
+
+.forum-table a {
+    color: var(--text);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.forum-table a:hover {
+    text-decoration: underline;
+}
+
+.empty-message td {
+    text-align: center;
+    padding: 3rem;
+    color: var(--text-muted);
+}

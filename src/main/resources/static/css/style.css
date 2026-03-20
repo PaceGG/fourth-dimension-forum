@@ -1,3 +1,8 @@
+@import url('components/form.css');
+@import url('components/table.css');
+@import url('responsive.css');
+
+
 .product:hover {
   transition: 0.5s;
   transform: scale(1.02);
@@ -27,4 +32,37 @@ img {
 
 td {
   border-width: 0 !important;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-dark: #111;
+    --bg-card: #1a1a1a;
+    --bg-header: #0a0a0a;
+    --border: #333;
+    --text: #fff;
+    --text-muted: #888;
+    --primary: #0066cc;
+    --primary-hover: #0052a3;
+    --button-bg: #333;
+    --radius: 6px;
+    --radius-lg: 8px;
+}
+
+body {
+    background: var(--bg-dark);
+    color: var(--text);
+    font-family: system-ui, -apple-system, sans-serif;
+    line-height: 1.5;
+    padding: 1rem;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }

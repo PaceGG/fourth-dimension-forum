@@ -1,0 +1,73 @@
+.create-form {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    max-width: 500px;
+}
+
+.create-form input {
+    flex: 1;
+    padding: 0.75rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    color: var(--text);
+    border-radius: var(--radius);
+    font-size: 1rem;
+}
+
+.create-form input:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.create-form button {
+    padding: 0.75rem 1.5rem;
+    background: var(--primary);
+    color: var(--text);
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.2s;
+}
+
+.create-form button:hover {
+    background: var(--primary-hover);
+}
+
+.actions {
+    display: flex;
+    gap: 0.5rem;
+    width: 80px;
+}
+
+.actions form {
+    margin: 0;
+}
+
+.actions button,
+.actions a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    background: var(--button-bg);
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: opacity 0.2s;
+    text-decoration: none;
+}
+
+.actions button:hover,
+.actions a:hover {
+    opacity: 0.8;
+}
+
+.actions img {
+    width: 16px;
+    height: 16px;
+    filter: brightness(0) invert(1);
+}
