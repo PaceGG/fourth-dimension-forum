@@ -1,0 +1,92 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: var(--bg-header);
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.brand {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.user-menu {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.username {
+    color: var(--text);
+    margin: 0;
+}
+
+.avatar img {
+    width: 32px;
+    height: 32px;
+    border-radius: var(--radius-round);
+    object-fit: cover;
+}
+
+.logout-form button {
+    padding: 0.5rem 1rem;
+    background: var(--danger);
+    color: var(--text);
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+}
+
+.logout-form button:hover {
+    background: var(--danger-hover);
+}
+
+.admin-link {
+    padding: 0.5rem 1rem;
+    background: var(--light);
+    color: var(--bg-dark);
+    text-decoration: none;
+    border-radius: var(--radius);
+}
+
+.login-btn {
+    padding: 0.5rem 1rem;
+    background: var(--light);
+    color: var(--bg-dark);
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+}
+
+.content {
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem;
+    }
+    
+    .content {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .user-menu {
+        justify-content: center;
+    }
+}
